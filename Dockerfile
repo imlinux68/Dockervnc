@@ -4,12 +4,12 @@ RUN apk add --no-cache sudo git xfce4 faenza-icon-theme bash python3 tigervnc xf
     && adduser -h /home/alpine -s /bin/bash -S -D alpine && echo -e "alpine\nalpine" | passwd alpine \
     && echo 'alpine ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers \
     && git clone https://github.com/novnc/noVNC /opt/noVNC \
-    && git clone https://github.com/novnc/websockify /opt/noVNC/utils/websockify \
-    && mkdir -p /usr/share/xfce4/backdrops/
+    && git clone https://github.com/novnc/websockify /opt/noVNC/utils/websockify
+#    && mkdir -p /usr/share/xfce4/backdrops/
 
-COPY Wall* /usr/share/xfce4/backdrops/
+#COPY Wall* /usr/share/xfce4/backdrops/
 
-RUN chmod 775 /usr/share/xfce4/backdrops/*
+#RUN chmod 775 /usr/share/xfce4/backdrops/*
 
 USER alpine
 
